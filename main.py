@@ -4,7 +4,16 @@ import asyncio
 
 def main():
     broker = Broker()
-    asyncio.run(random_printer_loop(broker))
+
+    asyncio.run(run_as_tasks(broker))
+
+
+async def run_as_tasks(broker):
+    generator = asyncio.create_task(random_generator_loop(broker))
+    printer = asyncio.create_task(random_printer_loop(broker))
+
+    await generator
+    await printer
 
 
 class Broker:
