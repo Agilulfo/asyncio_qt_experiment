@@ -2,9 +2,8 @@ from random import randint
 import asyncio
 
 
-def main():
+def run_loopy():
     broker = Broker()
-
     asyncio.run(run_as_tasks(broker))
 
 
@@ -40,7 +39,3 @@ async def random_printer_loop(broker):
         sleep_duration = randint(1, 3)
         await asyncio.sleep(sleep_duration)
         print(broker.get())
-
-
-if __name__ == "__main__":
-    main()
