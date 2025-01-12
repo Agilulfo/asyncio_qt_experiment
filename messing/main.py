@@ -1,6 +1,10 @@
-from loopy import run_loopy
+# from loopy import run_loopy
+from gui import run_gui
+
+
 def main():
-    run_loopy()
+    run_gui()
+
 
 if __name__ == "__main__":
     main()
