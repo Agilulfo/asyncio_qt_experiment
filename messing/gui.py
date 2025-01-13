@@ -8,12 +8,13 @@ from PySide6.QtWidgets import (
 import sys
 from loopy import run_loopy
 
+import PySide6.QtAsyncio as QtAsyncio
 
 def run_gui():
     app = QApplication(sys.argv)
     main_window = MainWindow()
     main_window.show()
-    sys.exit(app.exec())
+    QtAsyncio.run(handle_sigint=True)
 
 
 class MainWindow(QMainWindow):

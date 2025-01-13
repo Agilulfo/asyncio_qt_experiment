@@ -4,7 +4,7 @@ import asyncio
 
 def run_loopy():
     broker = Broker()
-    asyncio.run(run_as_tasks(broker))
+    asyncio.ensure_future(run_as_tasks(broker))
 
 
 async def run_as_tasks(broker):
